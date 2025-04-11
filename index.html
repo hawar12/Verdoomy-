@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Image Generator</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f2f2f2;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      width: 300px;
+      font-size: 16px;
+    }
+
+    .image-container {
+      margin-top: 30px;
+    }
+
+    img {
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .loading {
+      font-style: italic;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>AI Image Generator</h1>
+  <p>Type any description and we'll generate a stunning AI image for you!</p>
+
+  <input type="text" id="promptInput" placeholder="Enter your prompt here...">
+  <br>
+  <button onclick="generateImage()">Generate Image</button>
+
+  <div class="image-container" id="imageContainer"></div>
+
+  <script>
+    function generateImage() {
+      const container = document.getElementById('imageContainer');
+      container.innerHTML = '<p class="loading">Generating image...</p>';
+
+      setTimeout(() => {
+        container.innerHTML = `
+          <img src="joke.jpg" alt="AI Generated Image">
+          <p>Here is your AI-generated image!</p>
+        `;
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
